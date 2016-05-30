@@ -5,6 +5,10 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     return "Hello world!"
+
+@app.route('/<name>/')
+def hello_name(name):
+    return "Hello {}!".format(name)
     
 if __name__ == '__main__':
     host = os.getenv('IP','0.0.0.0')
