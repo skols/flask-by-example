@@ -26,3 +26,18 @@ Cloud9 Notes
         * A common key error is: Permission denied (publickey). You can fix this by using keys:add to notify Heroku of your new key.
         * Type the following in the terminal and it should work
             heroku keys:add
+
+    - Add the following lines to manage.py
+        from flask.ext.script import Manager, Server
+        manager.add_command("runserver", Server(
+            host = os.getenv('IP', '0.0.0.0'),
+            port = int(os.getenv('PORT',5000))
+            )
+        )
+        
+        if __name__ == '__main__':
+            manager.run()
+    
+    - If getting "Unable to add item to database" error, start postgres
+        * sudo service postgresql start
+    
