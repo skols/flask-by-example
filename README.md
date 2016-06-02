@@ -41,3 +41,7 @@ Cloud9 Notes
     - If getting "Unable to add item to database" error, start postgres
         * sudo service postgresql start
     
+    - Redis
+        * It's already installed, just need to start it
+        * sudo service redis-server start
+    
